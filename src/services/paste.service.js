@@ -2,9 +2,15 @@
 // import { v4 as uuid } from 'uuid';
 const redis = require("../db/redis");
 
+
+
+function generateRandomId() {
+  return Math.floor(Math.random() * 1_000_000); // 0 – 999999
+}
+
 async function createPaste(content, ttlSeconds, maxViews, nowMs) {
   // const id = uuid();
-  const id = 11
+  const id = generateRandomId()
 
 
   const paste = {

@@ -4,6 +4,13 @@ const { now } = require("../utils/time");
 
 const router = express.Router();
 
+
+// HOME PAGE
+router.get("/", (req, res) => {
+  res.render("create");
+});
+
+
 router.get("/p/:id", async (req, res) => {
   const paste = await getPaste(req.params.id, now(req));
   if (!paste) return res.status(404).render("error");
