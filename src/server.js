@@ -11,7 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+// app.set("views", path.join(__dirname, "views"));
+
+app.set("views", path.join(process.cwd(), "views"));
+
 
 app.use("/api", require("./routes/health.route"));
 app.use("/api", require("./routes/paste.route"));
