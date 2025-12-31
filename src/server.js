@@ -20,9 +20,9 @@ app.use("/api", require("./routes/health.route"));
 app.use("/api", require("./routes/paste.route"));
 app.use("/", require("./routes/view.route"));
 
-// app.listen(process.env.PORT, () => {
-//   console.log("Server running",process.env.PORT);
-// });
+app.listen(process.env.PORT, () => {
+  console.log("Server running",process.env.PORT);
+});
 
 //heloo
 
